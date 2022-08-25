@@ -1,3 +1,5 @@
+import { Character } from './../models/characters.models';
+import { HpService } from './../services/hp.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-characters.component.css']
 })
 export class AllCharactersComponent implements OnInit {
+  characters: any[] = [];
 
-  constructor() { }
+  constructor( private service:HpService) { }
 
   ngOnInit() {
+    this.service.all().subscribe((characters:Character[]) => {
+      console.log(characters);
+      this.characters = characters;
+    });
   }
 
 }
