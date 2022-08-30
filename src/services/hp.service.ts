@@ -11,8 +11,10 @@ export class HpService {
   private allcharacters: any[];
   private ApiUrl = 'http://hp-api.herokuapp.com/api/characters'
 
+
 constructor( private httpClient:HttpClient) {
   this.allcharacters = [];
+
 }
 
 get characters(){
@@ -22,5 +24,6 @@ get characters(){
 all():Observable<Character[]>{
   return this.httpClient.get<Character[]>(this.ApiUrl);
 }
+
 
 }

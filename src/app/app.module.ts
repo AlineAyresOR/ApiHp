@@ -1,4 +1,5 @@
-import { CharactersHousesComponent } from './../characters-houses/characters-houses.component';
+
+
 import { AllCharactersComponent } from './../all-characters/all-characters.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,15 +9,23 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './../home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
-import { NavbarComponent } from 'src/navbar/navbar.component';
-import {HttpClient, HttpClientModule} from '@angular/common/http'
+import { NavbarComponent } from '../navbar/navbar.component';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { AboutComponent } from '../about/about.component';
+
+
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
-     HomeComponent,
+    AboutComponent,
      NavbarComponent,
-     AllCharactersComponent,
-     CharactersHousesComponent,
+     HomeComponent,
+   AllCharactersComponent,
 
 
    ],
@@ -28,7 +37,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http'
     HttpClientModule,
 
   ],
-  providers: [],
+  providers: [ HomeComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
